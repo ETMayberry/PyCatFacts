@@ -37,7 +37,7 @@ def get_fact():
 
     # get the result into a json object
     result = {
-        g.db.fetchone()["fact"]
+        cur.fetchone()["fact"]
     }    
 
     # send the response to the client
