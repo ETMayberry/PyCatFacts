@@ -36,9 +36,7 @@ def get_fact():
     cur.execute("SELECT fact FROM facts WHERE id = ?", (fact_id,))
 
     # get the result into a json object
-    result = {
-        cur.fetchone()["fact"]
-    }    
+    result = cur.fetchone()[0]
 
     # send the response to the client
     return result
