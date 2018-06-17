@@ -1,3 +1,4 @@
+-- creates and populates a database for sqlite3
 CREATE TABLE facts (id INTEGER PRIMARY KEY ASC, fact TEXT);
 
 INSERT INTO facts (fact)
