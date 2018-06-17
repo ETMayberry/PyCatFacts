@@ -1,10 +1,11 @@
 Dim o, sapi, i
 
-' turn up the volume
+' turn up the volume to maximum
 Set WshShell = CreateObject("WScript.Shell")
 ' key code "&hAD" = un-mute
 WshShell.SendKeys(chr(&hAD))
 For i = 1 To 100
+' key code "&hAF" = volume up
 	WshShell.SendKeys(chr(&hAF)) 
 Next
 
