@@ -2,6 +2,7 @@ Dim o, sapi, i
 
 ' turn up the volume
 Set WshShell = CreateObject("WScript.Shell")
+' key code "&hAD" = un-mute
 WshShell.SendKeys(chr(&hAD))
 For i = 1 To 100
 	WshShell.SendKeys(chr(&hAF)) 
