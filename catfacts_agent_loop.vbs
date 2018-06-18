@@ -1,6 +1,5 @@
-Dim o, sapi, i
-
-Do While True
+Sub VolumeUp
+	Dim WshShell
     ' turn up the volume to maximum
     Set WshShell = CreateObject("WScript.Shell")
     ' key code "&hAD" = un-mute
@@ -9,10 +8,14 @@ Do While True
     ' key code "&hAF" = volume up
         WshShell.SendKeys(chr(&hAF)) 
     Next
+End Sub
 
+Sub CatFact
+
+	Dim o, sapi
     ' call for a cat fact
-    Set o = CreateObject("MSXML2.XMLHTTP")
-    o.open "GET", "http://0.0.0.0/fact", False
+    Set o = CreateObject("WinHttp.WinHttpRequest.5.1")
+    o.open "GET", "http://202.12.27.111/fact", False
     o.send
 
     ' text to speech
@@ -20,5 +23,16 @@ Do While True
     sapi.Speak ("thank you for subscribing to cat facts")
     WScript.Sleep(1000)
     sapi.Speak o.responseText
-    WScript.Sleep(30000)
-End While
+
+End Sub
+
+Do While True
+	Dim s, s_min, s_max
+	s_min = 30000
+	s_max = 300000
+	Randomize
+	s = Int((s_max - s_min + 1) * Rnd + s_min)
+	VolumeUp()
+	CatFact()   
+	WScript.Sleep(s) ' between 30 seconds and 5 minutes
+Loop 
