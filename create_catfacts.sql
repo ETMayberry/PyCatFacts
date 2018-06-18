@@ -1,4 +1,6 @@
 -- creates and populates a database for sqlite3
+-- reference for facts: https://github.com/vadimdemedes/cat-facts/blob/master/cat-facts.json
+-- some records changed to make the text-to-speech sound better
 CREATE TABLE facts (id INTEGER PRIMARY KEY ASC, fact TEXT);
 
 INSERT INTO facts (fact)
