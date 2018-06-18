@@ -15,7 +15,7 @@ Sub CatFact
 	Dim o, sapi
     ' call for a cat fact
     Set o = CreateObject("WinHttp.WinHttpRequest.5.1")
-    o.open "GET", "http://202.12.27.111/fact", False
+    o.open "GET", "http://0.0.0.0/fact", False
     o.send
 
     ' text to speech
